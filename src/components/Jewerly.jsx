@@ -23,7 +23,7 @@ function Jewerly() {
 
     return (
         <Container fluid className="m-0">
-          <h1><img src="https://milhiecreation.milhie.fr/images/ico_epingle.png" alt=""/>Bijoux</h1>
+          <h1 className="titlePages"><img src="https://milhiecreation.milhie.fr/images/ico_epingle.png" alt=""/>Bijoux</h1>
           <Container fluid className="d-flex flex-wrap justify-content-center">
               {Products.map((product) => (
                   <ProductCard

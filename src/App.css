@@ -2,7 +2,9 @@
   text-align: center;
   font-family: 'Indie Flower', cursive;
 }
-
+.titlePages{
+  color:white;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;

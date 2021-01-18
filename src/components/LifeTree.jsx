@@ -51,7 +51,7 @@ function LifeTree() {
     }, [])
     return (
         <Container fluid className="m-3">
-            <h1><img src="https://milhiecreation.milhie.fr/images/ico_epingle.png" alt=""/> Arbres de vie</h1>
+            <h1 className="titlePages"><img src="https://milhiecreation.milhie.fr/images/ico_epingle.png" alt=""/> Arbres de vie</h1>
         <Tabs defaultActiveKey="bigLifeTree" id="uncontrolled-tab-example" >
             <Tab eventKey="bigLifeTree" title="Grands" className="border">
                 <Container fluid className="m-0">
