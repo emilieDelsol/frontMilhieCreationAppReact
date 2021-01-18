@@ -11,3 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+#cardItem {
+  width: 25%;
+}
+@media screen and (max-width: 640px) {
+  #cardItem {
+  width:100%;
+}
+}
