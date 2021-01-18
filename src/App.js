@@ -16,9 +16,6 @@ function App() {
         <Menu/>
         <Switch>
             <Route exact path="/milhieCreation">
-              <Link to="/milhieCreation" >
-                <h1>Milhie création</h1>
-              </Link>
               <Home/>
             </Route>
             <Route path="/milhieCreation/lifeTree">

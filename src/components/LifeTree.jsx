@@ -1,65 +1,110 @@
-import { Card, Button, Carousel, Container} from 'react-bootstrap';
+import { Card, Button, Carousel, Container, Tabs, Tab} from 'react-bootstrap';
 import React, { useEffect, useState } from 'react';
 import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
-
+import ProductCard from './products/ProductCard';
 import axios from "axios";
 
 function LifeTree() {
-    const [LifeTrees, setLifeTrees] = useState([])
-    const url = "https://localhost:44321/MilhieCreation/Category/1" 
+    const [ProductsBig, setBigLifeTrees] = useState([])
+    const url = "https://localhost:44321/MilhieCreation/UnderCategory/1" 
     // axios request to get tournaments
-    const getLifeTrees =()=>{
+    const getBigLifeTrees =()=>{
       axios
           .get(url)
-          .then((res)=> setLifeTrees(res.data))
+          .then((res)=> setBigLifeTrees(res.data))
           .catch((error) => {
               console.error(error);
             });   
   }
     useEffect(() => {
-      getLifeTrees();
+      getBigLifeTrees();
+    }, [])
+    
+    const [ProductsMedium, setMediumLifeTrees] = useState([])
+    const urlMedium = "https://localhost:44321/MilhieCreation/UnderCategory/2" 
+    // axios request to get tournaments
+    const getMediumLifeTrees =()=>{
+      axios
+          .get(urlMedium)
+          .then((res)=> setMediumLifeTrees(res.data))
+          .catch((error) => {
+              console.error(error);
+            });   
+  }
+    useEffect(() => {
+      getMediumLifeTrees();
+    }, [])
+
+    const [ProductsSmall, setSmallLifeTrees] = useState([])
+    const urlSmall = "https://localhost:44321/MilhieCreation/UnderCategory/3" 
+    // axios request to get tournaments
+    const getSmallLifeTrees =()=>{
+      axios
+          .get(urlSmall)
+          .then((res)=> setSmallLifeTrees(res.data))
+          .catch((error) => {
+              console.error(error);
+            });   
+  }
+    useEffect(() => {
+      getSmallLifeTrees();
     }, [])
     return (
-        <Container fluid className="m-0">
-
-            <h1>Arbres de vie</h1>
-        <Container fluid className="d-flex flex-wrap justify-content-center">
-            {LifeTrees.map(item =>
-          
-          <Card className="m-0 m-lg-5" id="cardItem" >
-                <Card.Title>{item.title}</Card.Title>
-                <Card.Text>{item.disponibility ? "Disponible" : "Sur commande"}</Card.Text>
-                
-                <Carousel className="m-4" interval='10000'slide='false'>
-               {item.images.map(image =>
-                <Carousel.Item>
-                    <img
-                    className="d-block w-100"
-                    src={image}
-                    alt="slide"
-                    />
-                    
-                </Carousel.Item>
-                )}
-                </Carousel>
-                <Card.Body>
-                    <Card.Text>
-                        <p>
-                            {item.description}
-                        </p>
-                        <p>
-                            Prix: {item.price}€
-                        </p>
-                        <p>{item.disponibility ? "Disponible" : "Sur commande"}</p>
-                    </Card.Text>
-                    <Button variant="primary" href={item.link}>link </Button>
-                </Card.Body>
-                <Card.Footer>
-                    {item.reference}
-                </Card.Footer>
-            </Card>
-        )}
-        </Container>
+        <Container fluid className="m-3">
+            <h1><img src="https://milhiecreation.milhie.fr/images/ico_epingle.png" alt=""/> Arbres de vie</h1>
+        <Tabs defaultActiveKey="bigLifeTree" id="uncontrolled-tab-example" >
+            <Tab eventKey="bigLifeTree" title="Grands" className="border">
+                <Container fluid className="m-0">
+                    <Container fluid className="d-flex flex-wrap justify-content-center">
+                        
+                        {ProductsBig.map((product) => (
+                            <ProductCard
+                            title={product.title}
+                            price={product.price}
+                            description={product.description}
+                            link={product.link}
+                            reference={product.reference}
+                            images={product.images}
+                            />
+                            ))}
+                    </Container>
+                </Container>
+            </Tab>
+            <Tab eventKey="mediumLifeTree" title="Moyens" className="border">
+                <Container fluid className="m-0">
+                    <Container fluid className="d-flex flex-wrap justify-content-center">
+                        
+                        {ProductsMedium.map((product) => (
+                            <ProductCard
+                            title={product.title}
+                            price={product.price}
+                            description={product.description}
+                            link={product.link}
+                            reference={product.reference}
+                            images={product.images}
+                            />
+                            ))}
+                    </Container>
+                </Container>
+            </Tab>
+            <Tab eventKey="smallLifeTree" title="Petits" className="border">
+                <Container fluid className="m-0">
+                    <Container fluid className="d-flex flex-wrap justify-content-center">
+                        
+                        {ProductsSmall.map((product) => (
+                            <ProductCard
+                            title={product.title}
+                            price={product.price}
+                            description={product.description}
+                            link={product.link}
+                            reference={product.reference}
+                            images={product.images}
+                            />
+                            ))}
+                    </Container>
+                </Container>
+            </Tab>
+        </Tabs>
         </Container>
     );}
 
