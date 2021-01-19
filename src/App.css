@@ -6,7 +6,7 @@
   color:white;
 }
 .App-logo {
-  height: 40vmin;
+  height: 50vh;
   pointer-events: none;
 }
 
@@ -38,4 +38,17 @@
   to {
     transform: rotate(360deg);
   }
+}
+.backgroundLight{
+  background-color: rgba(255,255,255,0.1);
+  border-radius: 1em;
+}
+#bgNavBar{
+  /* height: 200px;
+  background-image: url("https://milhiecreation.milhie.fr/images/panoramaCreations2.png");
+   */
+   border-radius: 0.5em;
+   background-color: rgba(255,255,255,0.1);
+   font-size: x-large;
+
 }

@@ -50,12 +50,12 @@ function LifeTree() {
       getSmallLifeTrees();
     }, [])
     return (
-        <Container fluid className="m-3">
-            <h1 className="titlePages"><img src="https://milhiecreation.milhie.fr/images/ico_epingle.png" alt=""/> Arbres de vie</h1>
+        <Container fluid className="m-auto">
+            <h1 className="titlePages"><i class="fas fa-paperclip"></i> <span style={{textDecoration:'underline'}}>Arbres de vie</span></h1>
         <Tabs defaultActiveKey="bigLifeTree" id="uncontrolled-tab-example" >
             <Tab eventKey="bigLifeTree" title="Grands" className="border">
                 <Container fluid className="m-0">
-                    <Container fluid className="d-flex flex-wrap justify-content-center">
+                    <Container fluid className="d-flex flex-wrap justify-content-around">
                         
                         {ProductsBig.map((product) => (
                             <ProductCard
@@ -72,7 +72,7 @@ function LifeTree() {
             </Tab>
             <Tab eventKey="mediumLifeTree" title="Moyens" className="border">
                 <Container fluid className="m-0">
-                    <Container fluid className="d-flex flex-wrap justify-content-center">
+                    <Container fluid className="d-flex flex-wrap justify-content-around">
                         
                         {ProductsMedium.map((product) => (
                             <ProductCard
@@ -89,7 +89,7 @@ function LifeTree() {
             </Tab>
             <Tab eventKey="smallLifeTree" title="Petits" className="border">
                 <Container fluid className="m-0">
-                    <Container fluid className="d-flex flex-wrap justify-content-center">
+                    <Container fluid className="d-flex flex-wrap justify-content-around">
                         
                         {ProductsSmall.map((product) => (
                             <ProductCard

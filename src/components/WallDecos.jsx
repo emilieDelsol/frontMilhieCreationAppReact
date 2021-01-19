@@ -18,9 +18,9 @@ function WallDecos() {
       getProducts();
     }, [])
     return (
-        <Container fluid className="m-0">
-          <h1 className="titlePages"><img src="https://milhiecreation.milhie.fr/images/ico_epingle.png" alt=""/>Décorations murales</h1>
-          <Container fluid className="d-flex flex-wrap justify-content-center">
+        <Container fluid className="m-auto">
+          <h1 className="titlePages"><i class="fas fa-paperclip"></i> <span style={{textDecoration:'underline'}}>Décorations murales</span></h1>
+          <Container fluid className="d-flex flex-wrap justify-content-around">
               {Products.map((product) => (
                   <ProductCard
                   title={product.title}

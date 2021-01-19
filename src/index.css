@@ -13,7 +13,8 @@ code {
     monospace;
 }
 #cardItem {
-  width: 25%;
+  width: 25em;
+  height:auto;
 }
 @media screen and (max-width: 640px) {
   #cardItem {

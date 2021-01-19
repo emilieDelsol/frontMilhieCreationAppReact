@@ -17,10 +17,9 @@ const ProductCard = ({
     ]
   }) => {
     return (
-            <Card className="m-0 my-3 m-lg-5 shadow" id="cardItem" >
-                <Card.Title>{title}</Card.Title>
-                <Card.Text>{disponibility ? "Disponible" : "Sur commande"}</Card.Text>
-                
+            <Card className="m-0 my-3 m-lg-3 pt-3 shadow" id="cardItem" >
+                <Card.Title><h2 className="p-0 mx-2">{title}</h2></Card.Title>
+                <Card.Text className="m-0 p-0">{disponibility ? "Disponible" : "Sur commande"}</Card.Text>
                 <Carousel className="m-4" interval='1000000'slide='false'>
                 {images.map(image =>
                 <Carousel.Item>
@@ -29,21 +28,19 @@ const ProductCard = ({
                     src={image}
                     alt="slide"
                     />
-                    
                 </Carousel.Item>
                 )}
                 </Carousel>
                 <Card.Body>
-                    <Card.Text>
+                    <Card.Text className="p-0 m-0">
                         <p>
                             {description}
-                        </p>
-                        <p>
+                        <br/><br/>
                             Prix: {price}€
-                        </p>
-                        <p>{disponibility ? "Disponible" : "Sur commande"}</p>
+                        <br/>
+                            {disponibility ? "Disponible" : "Sur commande"}</p>
+                        <Button variant="primary" href={link}>link </Button>
                     </Card.Text>
-                    <Button variant="primary" href={link}>link </Button>
                 </Card.Body>
                 <Card.Footer>
                     {reference}

@@ -1,17 +1,19 @@
 import React from "react";
-import {Navbar, Nav, NavDropdown} from 'react-bootstrap'
+import {Navbar, Nav, NavDropdown, NavbarBrand} from 'react-bootstrap'
 
 function Menu() {
 
     return (
-        <Navbar bg="light" expand="lg">
-          <Navbar.Brand href="/milhieCreation"><img src="https://i.servimg.com/u/f19/18/20/68/28/th/img_2023.jpg" className="w-25" alt="milhie création"/> Milhie création</Navbar.Brand>
+      <div id="bgNavBar" className="border m-4 d-flex justify-content-lg-center">
+        
+        <Navbar bg="" variant="dark" expand="lg" className="w-100">
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="mr-auto">
-              <Nav.Link href="/milhieCreation/lifeTree">Arbres de vie</Nav.Link>
-              <Nav.Link href="/milhieCreation/jewerly">Bijoux</Nav.Link>
-              <NavDropdown title="Décorations" id="basic-nav-dropdown">
+            <Nav className="mx-auto">
+              <NavbarBrand href="/" className="mx-3 my-auto"><h2>Accueil</h2></NavbarBrand>
+              <Nav.Link href="/milhieCreation/lifeTree" className="mx-3 my-auto ">Arbres de vie</Nav.Link>
+              <Nav.Link href="/milhieCreation/jewerly" className="mx-3 my-auto">Bijoux</Nav.Link>
+              <NavDropdown title="Décorations" id="basic-nav-dropdown" className="mx-3 my-auto">
                 <NavDropdown.Item href="/milhieCreation/dreamcatcher">Pieges à rêve</NavDropdown.Item>
                 <NavDropdown.Item href="/milhieCreation/wallDecos">Decorations murales</NavDropdown.Item>
                 <NavDropdown.Item href="/milhieCreation/weddingDecos">Decorations de mariage</NavDropdown.Item>
@@ -21,6 +23,7 @@ function Menu() {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
+      </div>
     );}
 
 
